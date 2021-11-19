@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
+import axios from 'axios'
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   const [isDrawing, setIsDrawing] = useState(false)
   const [history, setHistory] = useState([]);
   const [index, setIndex] =useState(-1)
+  const [dogs, setDigs] = useState([])
 
   let draw_color = 'black'
   let start_background_color = 'white';
@@ -43,7 +45,8 @@ function App() {
   }, [])
   useEffect(() => {
     // demo purposes hardcoded
-    axios.get('http://localhost:3001/dogs').then(res => {
+    axios.get('http://localhost:3001/dogs')
+    .then(res => {
       console.log(res);
     })
   }, [])

@@ -41,6 +41,12 @@ function App() {
     // }
    
   }, [])
+  useEffect(() => {
+    // demo purposes hardcoded
+    axios.get('http://localhost:3001/dogs').then(res => {
+      console.log(res);
+    })
+  }, [])
   
 
   const startDrawing = ({nativeEvent}) => {
